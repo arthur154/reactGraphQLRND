@@ -30,3 +30,4 @@ jobs:
         npm run build
         npm test
       name: Build and Test
+      working-directory: ./hello-world
