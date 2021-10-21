@@ -1,1 +1,2 @@
 This is to test that the hello-world folder triggers CI still.
+Another test.
