@@ -1,5 +1,4 @@
-// const mongoose = require('mongoose');
-// const Schema = mongoose.Schema;
+// Require DB Schema
 
 // const userSchema = new Schema({
 //     id: Number,
@@ -10,5 +9,4 @@
 //     // address
 // });
 
-// // module.exports = mongoose.model('Author', authorSchema);
-// module.exports = userSchema;
+// Export Schema
