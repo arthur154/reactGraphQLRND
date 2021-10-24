@@ -4,6 +4,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 
 export default function UserList() {
+    // TODO: replace this url with graphQL/api url
     const baseURL = "https://jsonplaceholder.typicode.com/users";
     const [users, setUsers] = React.useState(null);
 
