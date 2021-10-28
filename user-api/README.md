@@ -1,8 +1,15 @@
-To run this app locally: npm run dev
-Prerequisite: npm install -g nodemon
-https://nodemon.io/
+# Graph QL User API
 
-To deploy this app to AWS: serverless deploy --verbose
-Prerequisite: npm install -g serverless
-https://www.serverless.com/
-Configure serverless deployment user: serverless config credentials --provider aws --key {{aws_user_access_key}} --secret {{aws_user_secret}} -o
+## Project Startup
+cdk init  app --language=typescript
+cdk bootstrap
+
+## Install sam-beta-cdk
+https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-cdk-getting-started.html
+sam-beta-cdk --version
+sam-beta-cdk local start-api --warm-containers EAGER
+
+## Useful commands
+ * `cdk deploy`      deploy this stack to your default AWS account/region
+ * `cdk diff`        compare deployed stack with current state
+ * `cdk synth`       emits the synthesized CloudFormation template
