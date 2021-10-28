@@ -14,10 +14,15 @@ iamRoleStatements:
 functions:
   graphql:
     # this is formatted as <FILENAME>.<HANDLER>
-    handler: index.graphqlHandler
+    handler: lambda.graphqlHandler
     events:
       - http:
-          path: graphql
+          path: /
           method: get
+          cors: true
+          integration: lambda-proxy
+      - http:
+          path: /
+          method: post
           cors: true
           integration: lambda-proxy

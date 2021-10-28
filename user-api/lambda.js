@@ -1,13 +1,14 @@
 // lambda.js
 const { ApolloServer } = require("apollo-server-lambda");
-
 const { typeDefs, resolvers, mocks } = require("./graphql/schema");
+const { ApolloServerPluginInlineTrace } = require("apollo-server-core");
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  mocks,
+  mocks: false,
   mockEntireSchema: false,
+  plugins: [ApolloServerPluginInlineTrace()],
   context: ({ event, context }) => ({
     headers: event.headers,
     functionName: context.functionName,
@@ -16,6 +17,8 @@ const server = new ApolloServer({
   })
 });
 
-module.exports = {
-  server
-};
+exports.graphqlHandler = server.createHandler();
+
+// module.exports = {
+//   server
+// };
